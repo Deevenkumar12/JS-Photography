@@ -333,9 +333,9 @@ nav{
 .bookinfo a{color:var(--gold);}
 .bookcard{background:var(--bg2);border:1px solid var(--borderGold);padding:2.5rem;}
 /* ─── PHONE COUNTRY SELECTOR ────────────────────── */
-.phone-wrap{display:flex;gap:0;grid-column:span 2 !important;}
+.phone-wrap{display:flex;gap:0;}
 .country-sel{
-  flex-shrink:0;width:70px !important;min-width:70px !important;
+  flex-shrink:0;width:auto;min-width:90px;
   padding:10px 8px;background:var(--bg3);
   border:1px solid rgba(255,215,0,.25);border-right:none;
   color:#fff;font-family:'Rajdhani',sans-serif;font-size:.88rem;
@@ -346,7 +346,7 @@ nav{
 }
 .country-sel:focus{outline:none;border-color:var(--gold);}
 .country-sel option{background:#1a1c20;color:#fff;font-size:.9rem;}
-.phone-wrap input{flex:1;border-left:none;padding-left:12px !important;}
+.phone-wrap input{flex:1;border-left:none;}
 .phone-wrap input:focus{outline:none;border-color:var(--gold);}
 /* ─── CONTACT LINKS ─────────────────────────────── */
 .contact-links{display:flex;flex-direction:column;gap:10px;margin-top:8px;}
@@ -855,11 +855,11 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
       <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774183433/pexels-pavel-danilyuk-7180623_bqpe4y.jpg" alt="Birthday" loading="lazy"><div class="svc2info"><div class="svc2name">Birthday &amp; Events</div><div class="svc2desc">Naming ceremonies, puberty functions, birthday celebrations.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
     </div>
     <div id="t-vid" class="tpane">
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774183788/Teaser_Video_ssmjwg.webp" alt="Teaser" loading="lazy"><div class="svc2info"><div class="svc2name">Teaser Video</div><div class="svc2desc">Short cinematic teasers — the highlight of highlights.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774183787/Highlight_bbq3xx.jpg" alt="Highlight Video" loading="lazy"><div class="svc2info"><div class="svc2name">Highlight Video</div><div class="svc2desc">10–15 minute cinematic wedding highlight film.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774183919/Reels-shoot-5_v0ctx6.png" alt="Reels" loading="lazy"><div class="svc2info"><div class="svc2name">Reels / Shorts</div><div class="svc2desc">Instagram Reels and YouTube Shorts — shareable wedding content.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774183787/Wedding_film_ycbl9b.jpg" alt="Full Film" loading="lazy"><div class="svc2info"><div class="svc2name">Full Wedding Film</div><div class="svc2desc">Complete cinematic documentary of your entire wedding day.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-    </div>
+          <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774183788/Teaser_Video_ssmjwg.webp" alt="Teaser" loading="lazy"><div class="svc2info"><div class="svc2name">Teaser Video</div><div class="svc2desc">Short cinematic teasers — the highlight of highlights.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+          <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774334314/pexels-imagestudio-1488315_pigpnr.jpg" alt="Highlight Video" loading="lazy"><div class="svc2info"><div class="svc2name">Highlight Video</div><div class="svc2desc">10–15 minute cinematic wedding highlight film.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+          <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774183919/Reels-shoot-5_v0ctx6.png" alt="Reels" loading="lazy"><div class="svc2info"><div class="svc2name">Reels / Shorts</div><div class="svc2desc">Instagram Reels and YouTube Shorts — shareable wedding content.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+          <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774183787/Wedding_film_ycbl9b.jpg" alt="Full Film" loading="lazy"><div class="svc2info"><div class="svc2name">Full Wedding Film</div><div class="svc2desc">Complete cinematic documentary of your entire wedding day.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+        </div>
     <div id="t-spe" class="tpane">
       <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774184247/pexels-ashwin-shrigiri-1609244-7522839_yralcv.jpg" alt="Maternity" loading="lazy"><div class="svc2info"><div class="svc2name">Maternity Shoot</div><div class="svc2desc">Celebrating the beauty of motherhood with artistic photography.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
       <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774184457/pexels-helenalopes-10028013_iutmo2.jpg" alt="Baby Shoot" loading="lazy"><div class="svc2info"><div class="svc2name">Baby / Newborn Shoot</div><div class="svc2desc">Precious first memories of your newborn captured perfectly.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
@@ -874,10 +874,10 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
     </div>
     <div id="t-oth" class="tpane">
       <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774269262/AI_ksjwhy.jpg" alt="AI Videos" loading="lazy"><div class="svc2info"><div class="svc2name">AI Videos</div><div class="svc2desc">Next-gen AI-powered video creation with stunning effects and cinematic quality.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774334323/fotis-fotopoulos-DuHKoV44prg-unsplash_l3msrd.jpg" alt="Website Development" loading="lazy"><div class="svc2info"><div class="svc2name">Website Development</div><div class="svc2desc">Professional website design and development services for your business.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
       <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774269264/mixing_iggzgn.jpg" alt="Wedding Video Mixing" loading="lazy"><div class="svc2info"><div class="svc2name">Wedding Video Mixing</div><div class="svc2desc">Professional wedding video editing with advanced mixing and color grading.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774269262/software_v9ogti.jpg" alt="Software Installation & Backup" loading="lazy"><div class="svc2info"><div class="svc2name">Software Installation</div><div class="svc2desc">Professional software setup and installation for photography & video editing workflows.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774334476/software_v9ogti.avif" alt="Software Installation & Backup" loading="lazy"><div class="svc2info"><div class="svc2name">Software Installation & Backup</div><div class="svc2desc">Professional software setup, installation, and backup solutions for photography & video editing workflows.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
       <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774269262/os_pbdtfd.webp" alt="OS Installation" loading="lazy"><div class="svc2info"><div class="svc2name">OS Installation</div><div class="svc2desc">Windows & other operating system installation and configuration services.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774334323/fotis-fotopoulos-DuHKoV44prg-unsplash_l3msrd.jpg" alt="Website Development" loading="lazy"><div class="svc2info"><div class="svc2name">Website Development</div><div class="svc2desc">Professional Website Development for Businesses Develop with Budget Friendly Website Build.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
     </div>
   </section>
 </div>
@@ -987,8 +987,7 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
                 <option>Canvas Prints</option><option>Photo Mugs &amp; Gifts</option>
               </optgroup>
               <optgroup label="OTHER">
-                <option>AI Videos</option><option>Wedding Video Mixing</option>
-                <option>Software Installation & Backup</option><option>OS Installation</option><option>Website Development</option>
+                <option>Software Installation</option><option>OS Installation</option>
               </optgroup>
             </select>
           </div>
@@ -1606,42 +1605,6 @@ function validatePhone(rawDigits,countryCode){
   return {ok:true};
 }
 
-function validatePhone(raw){
-  // Remove spaces and dashes
-  var ph=raw.replace(/[\s\-\(\)]/g,'');
-  // Must be only digits (after country code)
-  if(!/^\+?\d+$/.test(ph)){
-    return {ok:false,msg:'Phone number must contain only digits (no letters or special characters).'};
-  }
-  // Check country code
-  var matched=null, digits='';
-  var sorted=Object.keys(COUNTRY_RULES).sort(function(a,b){return b.length-a.length;});
-  if(ph.startsWith('+')){
-    for(var i=0;i<sorted.length;i++){
-      if(ph.startsWith(sorted[i])){
-        matched=sorted[i];
-        digits=ph.substring(sorted[i].length);
-        break;
-      }
-    }
-    if(!matched){
-      return {ok:false,msg:'Unknown country code. Please use format like +91XXXXXXXXXX for India.'};
-    }
-  } else {
-    // No country code - assume India (+91) if 10 digits starting with 6-9
-    digits=ph;
-    matched='+91';
-  }
-  var rule=COUNTRY_RULES[matched];
-  // Only digits in the number part
-  if(!/^\d+$/.test(digits)){
-    return {ok:false,msg:'Phone number must contain only digits.'};
-  }
-  if(!rule.re.test(digits)){
-    return {ok:false,msg:'Invalid '+rule.name+' phone number. Expected '+rule.len+' digits after country code '+matched+'.'};
-  }
-  return {ok:true, formatted:matched+' '+digits};
-}
 
 function showFieldError(id,msg){
   var el=document.getElementById(id);if(!el)return;
@@ -1664,6 +1627,26 @@ function clearFieldErrors(){
     var el=document.getElementById(id);
     if(el){el.style.borderColor='';el.style.boxShadow='';}
   });
+}
+
+function isValidEmail(email){
+  var re=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  if(!re.test(email))return false;
+  var parts=email.split('@'),domain=parts[1];
+  if(!domain||domain.length<4)return false;
+  var dotIdx=domain.lastIndexOf('.');
+  var tld=domain.substring(dotIdx+1);
+  return tld.length>=2&&tld.length<=6;
+}
+
+function isValidEmail(email){
+  var re=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  if(!re.test(email))return false;
+  var parts=email.split('@'),domain=parts[1];
+  if(!domain||domain.length<4)return false;
+  var dotIdx=domain.lastIndexOf('.');
+  var tld=domain.substring(dotIdx+1);
+  return tld.length>=2&&tld.length<=6;
 }
 
 function submitBooking(){
