@@ -874,8 +874,9 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
     </div>
     <div id="t-oth" class="tpane">
       <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774269262/AI_ksjwhy.jpg" alt="AI Videos" loading="lazy"><div class="svc2info"><div class="svc2name">AI Videos</div><div class="svc2desc">Next-gen AI-powered video creation with stunning effects and cinematic quality.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774334323/fotis-fotopoulos-DuHKoV44prg-unsplash_l3msrd.jpg" alt="Website Development" loading="lazy"><div class="svc2info"><div class="svc2name">Website Development</div><div class="svc2desc">Professional website design and development services for your business.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
       <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774269264/mixing_iggzgn.jpg" alt="Wedding Video Mixing" loading="lazy"><div class="svc2info"><div class="svc2name">Wedding Video Mixing</div><div class="svc2desc">Professional wedding video editing with advanced mixing and color grading.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774269262/software_v9ogti.jpg" alt="Software Installation" loading="lazy"><div class="svc2info"><div class="svc2name">Software Installation</div><div class="svc2desc">Professional software setup and installation for photography & video editing workflows.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774334476/software_v9ogti.avif" alt="Software Installation & Backup" loading="lazy"><div class="svc2info"><div class="svc2name">Software Installation & Backup</div><div class="svc2desc">Professional software setup, installation, and backup solutions for photography & video editing workflows.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
       <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774269262/os_pbdtfd.webp" alt="OS Installation" loading="lazy"><div class="svc2info"><div class="svc2name">OS Installation</div><div class="svc2desc">Windows & other operating system installation and configuration services.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
     </div>
   </section>
@@ -1604,42 +1605,6 @@ function validatePhone(rawDigits,countryCode){
   return {ok:true};
 }
 
-function validatePhone(raw){
-  // Remove spaces and dashes
-  var ph=raw.replace(/[\s\-\(\)]/g,'');
-  // Must be only digits (after country code)
-  if(!/^\+?\d+$/.test(ph)){
-    return {ok:false,msg:'Phone number must contain only digits (no letters or special characters).'};
-  }
-  // Check country code
-  var matched=null, digits='';
-  var sorted=Object.keys(COUNTRY_RULES).sort(function(a,b){return b.length-a.length;});
-  if(ph.startsWith('+')){
-    for(var i=0;i<sorted.length;i++){
-      if(ph.startsWith(sorted[i])){
-        matched=sorted[i];
-        digits=ph.substring(sorted[i].length);
-        break;
-      }
-    }
-    if(!matched){
-      return {ok:false,msg:'Unknown country code. Please use format like +91XXXXXXXXXX for India.'};
-    }
-  } else {
-    // No country code - assume India (+91) if 10 digits starting with 6-9
-    digits=ph;
-    matched='+91';
-  }
-  var rule=COUNTRY_RULES[matched];
-  // Only digits in the number part
-  if(!/^\d+$/.test(digits)){
-    return {ok:false,msg:'Phone number must contain only digits.'};
-  }
-  if(!rule.re.test(digits)){
-    return {ok:false,msg:'Invalid '+rule.name+' phone number. Expected '+rule.len+' digits after country code '+matched+'.'};
-  }
-  return {ok:true, formatted:matched+' '+digits};
-}
 
 function showFieldError(id,msg){
   var el=document.getElementById(id);if(!el)return;
@@ -1662,6 +1627,26 @@ function clearFieldErrors(){
     var el=document.getElementById(id);
     if(el){el.style.borderColor='';el.style.boxShadow='';}
   });
+}
+
+function isValidEmail(email){
+  var re=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  if(!re.test(email))return false;
+  var parts=email.split('@'),domain=parts[1];
+  if(!domain||domain.length<4)return false;
+  var dotIdx=domain.lastIndexOf('.');
+  var tld=domain.substring(dotIdx+1);
+  return tld.length>=2&&tld.length<=6;
+}
+
+function isValidEmail(email){
+  var re=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  if(!re.test(email))return false;
+  var parts=email.split('@'),domain=parts[1];
+  if(!domain||domain.length<4)return false;
+  var dotIdx=domain.lastIndexOf('.');
+  var tld=domain.substring(dotIdx+1);
+  return tld.length>=2&&tld.length<=6;
 }
 
 function submitBooking(){
