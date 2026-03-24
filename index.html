@@ -650,19 +650,28 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
   .hjs{font-size:4rem;}
   .hsub{letter-spacing:3px;font-size:.76rem;}
 }
-/* ─── ONLY MOBILE HAMBURGER MENU (Safe - No other changes) ───────────────── */
+/* ─── ONLY MOBILE HAMBURGER MENU - FINAL SAFE FIX ───────────────── */
 @media (max-width: 960px) {
   .nlinks {
-    display: none !important;     /* Desktop tabs hide on mobile */
+    display: none !important;
   }
   .hmbg {
-    display: flex !important;     /* 3 dots show only on mobile */
+    display: flex !important;
   }
   .mobmenu.open {
-    display: block !important;    /* Menu open avvali */
+    display: block !important;
   }
 }
-</style>
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .nlinks {
+    display: none !important;
+  }
+  .hmbg {
+    display: flex !important;
+  }
+}/style>
 </head>
 <body>
 
