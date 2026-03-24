@@ -650,67 +650,64 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
   .hjs{font-size:4rem;}
   .hsub{letter-spacing:3px;font-size:.76rem;}
 }
-@media(max-width:768px){
+/* ===== FORCE MOBILE FIX ===== */
+
+@media screen and (max-width:768px){
+
   .hero{
-    height:85vh !important;
-    min-height:480px !important;
+    height:80vh !important;
+    min-height:auto !important;
+    padding-top:70px !important;
+  }
+
+  .hslides,
+  .hslide{
+    height:100% !important;
   }
 
   .hslide{
     background-position:center center !important;
+    background-size:cover !important;
+  }
+
+  .hcont{
+    margin-top:0 !important;
+    padding-top:40px !important;
   }
 
   .hjs{
-    font-size:3.5rem !important;
-    letter-spacing:8px !important;
+    font-size:3rem !important;
+    letter-spacing:6px !important;
   }
 
   .hphoto{
-    font-size:1.6rem !important;
+    font-size:1.5rem !important;
     letter-spacing:4px !important;
   }
 
   .hsub{
     font-size:.8rem !important;
-    letter-spacing:3px !important;
+    letter-spacing:2px !important;
   }
+
+  .hbtns{
+    flex-direction:column !important;
+    gap:12px !important;
+  }
+
+  .btng, .btno{
+    width:100% !important;
+    text-align:center;
+  }
+
 }
 
-@media(max-width:960px){
+/* MENU FIX */
+@media screen and (max-width:960px){
   .hmbg{
     display:flex !important;
   }
 }
-
-@media(max-width:480px){
-  .hero{
-    height:80vh !important;
-  }
-
-  .hjs{
-    font-size:3rem !important;
-  }
-
-  .hphoto{
-    font-size:1.4rem !important;
-  }
-}
-
-img{
-  max-width:100%;
-  height:auto;
-}
-
-@media(max-width:768px){
-  .homesvc{
-    grid-template-columns:1fr !important;
-  }
-
-  .pgrid{
-    grid-template-columns:1fr !important;
-  }
-}
-
 </style>
 </head>
 <body>
