@@ -662,6 +662,74 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
     display: block !important;
   }
 }
+<style>
+/* ─── VARIABLES ─────────────────────────────────── */
+:root{
+  --gold:#FFD700; --gold2:#FFA500; --goldGlow:rgba(255,215,0,.55);
+  --bg:#111214; --bg2:#18191d; --bg3:#1f2026; --bg4:#252730;
+  --text:#EEE8DC; --textMed:#BFB9AB; --textDim:#888070;
+  --wa:#25D366; --call:#3B82F6;
+  --borderGold:rgba(255,215,0,.22);
+}
+
+/* ─── RESET & BASE ──────────────────────────────── */
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; font-size:17px; }
+body { background:var(--bg); color:var(--text); font-family:'Lato',sans-serif; overflow-x:hidden; line-height:1.65; }
+img { max-width:100%; display:block; object-fit:cover; }
+a { color:inherit; text-decoration:none; }
+button { cursor:pointer; font-family:inherit; }
+
+/* ─── NAV ────────────────────────────────────────── */
+nav{
+  position:fixed; top:0; left:0; width:100%; z-index:9000;
+  background:rgba(17,18,20,.96); backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--borderGold);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 1.5rem; height:68px;
+}
+.nlogo { display:flex; align-items:center; gap:11px; cursor:pointer; }
+.nlinks { display:flex; list-style:none; }
+.nlinks a {
+  display:block; padding:0 .9rem; height:68px; line-height:68px;
+  color:var(--textMed); font-family:'Rajdhani',sans-serif;
+  font-size:.82rem; letter-spacing:1.8px; font-weight:600; text-transform:uppercase;
+}
+.nlinks a:hover, .nlinks a.active { color:var(--gold); }
+
+/* Hamburger Icon */
+.hmbg {
+  display:none; flex-direction:column; gap:5px; padding:7px; background:none; border:none;
+}
+.hmbg span {
+  width:23px; height:2px; background:var(--gold); border-radius:2px; display:block;
+}
+
+/* Mobile Menu */
+.mobmenu {
+  display:none; position:fixed; top:68px; left:0; width:100%;
+  background:rgba(17,18,20,.98); z-index:8999;
+  border-bottom:1px solid var(--borderGold);
+  max-height:calc(100vh - 68px); overflow-y:auto;
+}
+.mobmenu.open { display:block; }
+.mobmenu a {
+  display:block; padding:.9rem 1.6rem; color:var(--textMed);
+  font-family:'Rajdhani',sans-serif; font-size:.9rem;
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.mobmenu a:hover { color:var(--gold); }
+
+/* ─── HERO & OTHER STYLES (unchanged) ─────────────── */
+/* (Nee purana hero, sections, booking, gallery etc. styles same ga unchuko) */
+
+/* ─── ONLY MOBILE HAMBURGER FIX ───────────────────── */
+@media (max-width: 960px) {
+  .nlinks { display: none !important; }     /* Desktop tabs hide */
+  .hmbg   { display: flex !important; }     /* 3 dots show only on mobile */
+  .mobmenu.open { display: block !important; }
+}
+</style>
 </style>
 </head>
 <body>
