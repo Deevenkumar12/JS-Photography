@@ -615,70 +615,58 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
 .ftaddr strong{color:var(--gold);font-weight:700;display:block;margin-bottom:3px;font-family:'Rajdhani',sans-serif;letter-spacing:1px;}
 .ftcopy{font-size:.76rem;color:rgba(255,255,255,.22);font-family:'Rajdhani',sans-serif;letter-spacing:1px;}
 
-/* ─── RESPONSIVE + HAMBURGER MENU (FINAL PERFECT) ───────────────── */
+/* ─── RESPONSIVE ─────────────────────────────────── */
 @media(max-width:960px){
-  .nlinks{display:none !important;}
-  .hmbg{display:flex !important;}
-  
-  /* HERO MOBILE FIX */
-  .hero{min-height:520px !important; height:auto !important; padding-top:70px !important;}
-  .hjs{font-size:4.2rem !important; letter-spacing:6px !important;}
-  .hphoto{font-size:1.75rem !important; letter-spacing:4px !important;}
-  .hcont{margin-top:0 !important; padding:0 15px !important;}
-  .hbtns{flex-direction:column !important; gap:16px !important; width:100%;}
-  .btng, .btno{width:90% !important; margin:0 auto !important;}
-}
-
-@media(max-width:640px){
-  .hero{min-height:480px !important;}
-  .hjs{font-size:3.6rem !important;}
-  .hphoto{font-size:1.55rem !important;}
-}
-
-@media(max-width:480px){
-  .hero{min-height:460px !important;}
-  .hjs{font-size:3.2rem !important;}
-  .hphoto{font-size:1.4rem !important;}
-}
-
-* ─── RESPONSIVE + HAMBURGER FINAL ───────────────── */
-@media(max-width:960px){
-  .nlinks{display:none !important;}
-  .hmbg{display:flex !important;}
-  
-  /* HERO MOBILE */
-  .hero{min-height:520px !important; height:auto !important; padding-top:70px !important;}
-  .hjs{font-size:4.2rem !important; letter-spacing:6px !important;}
-  .hphoto{font-size:1.75rem !important; letter-spacing:4px !important;}
-  .hcont{margin-top:0 !important; padding:0 15px !important;}
-  .hbtns{flex-direction:column !important; gap:16px !important; width:100%;}
-  .btng, .btno{width:90% !important; margin:0 auto !important;}
-  
+  .nlinks{display:none;}
+  .hmbg{display:flex;}
   .homesvc{grid-template-columns:1fr 1fr;}
+  .aboutwrap{grid-template-columns:1fr;gap:3rem;padding:2.5rem 1.5rem 4rem;}
+  .aport{position:static;}
+  .contwrap{grid-template-columns:1fr;gap:2.2rem;}
+  .mapsgrid{grid-template-columns:1fr;}
+  .admstats{grid-template-columns:1fr 1fr;}
+  .frow{grid-template-columns:1fr;}
+  .afrow{grid-template-columns:1fr;}
   .pgrid{grid-template-columns:1fr 1fr;grid-auto-rows:auto;}
-  .aboutwrap{grid-template-columns:1fr;}
-  .contwrap{grid-template-columns:1fr;}
+  .pi:nth-child(1){grid-column:span 2;}
 }
-
 @media(max-width:640px){
+  html{font-size:16px;}
   .homesvc{grid-template-columns:1fr;}
+  .galgrid{columns:2 140px;}
+  .stats{flex-direction:column;}
+  .stat:not(:last-child)::after{display:none;}
+  .memgrid{grid-template-columns:1fr;gap:16px;}
+  .mimg img{height:auto;}
   .pgrid{grid-template-columns:1fr;}
-  .hero{min-height:480px !important;}
-  .hjs{font-size:3.6rem !important;}
-  .hphoto{font-size:1.55rem !important;}
+  .pi:nth-child(1){grid-column:span 1;}
+  .floats{right:.6rem;bottom:1rem;}
+  .fl{padding:8px 12px;font-size:.7rem;}
+  .admstats{grid-template-columns:1fr 1fr;}
+  .sec{padding:4rem 1.2rem;}
 }
-
-@media(max-width:480px){
-  .hero{min-height:460px !important;}
-  .hjs{font-size:3.2rem !important;}
-  .hphoto{font-size:1.4rem !important;}
+@media(max-width:400px){
+  .galgrid{columns:1;}
+  .hjs{font-size:4rem;}
+  .hsub{letter-spacing:3px;font-size:.76rem;}
 }
-
-/* FORCE HAMBURGER MENU */
+/* ─── RESPONSIVE + HAMBURGER ONLY ───────────────── */
 @media(max-width:960px){
-  .nlinks{display:none !important;}
-  .hmbg{display:flex !important;}
-  .mobmenu.open{display:block !important;}
+  .nlinks { display: none !important; }     /* ← Desktop tabs hide */
+  .hmbg   { display: flex !important; }     /* ← 3 dots show */
+  .mobmenu.open { display: block !important; }
+}
+/* ─── ONLY MOBILE HAMBURGER MENU ───────────────── */
+@media (max-width: 960px) {
+  .nlinks { 
+    display: none !important; 
+  }
+  .hmbg { 
+    display: flex !important; 
+  }
+  .mobmenu.open { 
+    display: block !important; 
+  }
 }
 </style>
 </head>
