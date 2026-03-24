@@ -618,39 +618,56 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
 /* ─── RESPONSIVE ─────────────────────────────────── */
 @media(max-width:960px){
   .nlinks{display:none;}
-  .hmbg{display:flex;}
-  .homesvc{grid-template-columns:1fr 1fr;}
-  .aboutwrap{grid-template-columns:1fr;gap:3rem;padding:2.5rem 1.5rem 4rem;}
-  .aport{position:static;}
-  .contwrap{grid-template-columns:1fr;gap:2.2rem;}
-  .mapsgrid{grid-template-columns:1fr;}
-  .admstats{grid-template-columns:1fr 1fr;}
-  .frow{grid-template-columns:1fr;}
-  .afrow{grid-template-columns:1fr;}
-  .pgrid{grid-template-columns:1fr 1fr;grid-auto-rows:auto;}
-  .pi:nth-child(1){grid-column:span 2;}
+/* ==================== HAMBURGER MENU - ONLY MOBILE ==================== */
+.hmbg {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 7px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
-@media(max-width:640px){
-  html{font-size:16px;}
-  .homesvc{grid-template-columns:1fr;}
-  .galgrid{columns:2 140px;}
-  .stats{flex-direction:column;}
-  .stat:not(:last-child)::after{display:none;}
-  .memgrid{grid-template-columns:1fr;gap:16px;}
-  .mimg img{height:auto;}
-  .pgrid{grid-template-columns:1fr;}
-  .pi:nth-child(1){grid-column:span 1;}
-  .floats{right:.6rem;bottom:1rem;}
-  .fl{padding:8px 12px;font-size:.7rem;}
-  .admstats{grid-template-columns:1fr 1fr;}
-  .sec{padding:4rem 1.2rem;}
+.hmbg span {
+  width: 23px;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 2px;
+  display: block;
+  transition: all 0.3s;
 }
-@media(max-width:400px){
-  .galgrid{columns:1;}
-  .hjs{font-size:4rem;}
-  .hsub{letter-spacing:3px;font-size:.76rem;}
+
+/* Mobile Menu */
+.mobmenu {
+  display: none;
+  position: fixed;
+  top: 68px;
+  left: 0;
+  width: 100%;
+  background: rgba(17,18,20,.98);
+  z-index: 8999;
+  border-bottom: 1px solid var(--borderGold);
+  max-height: calc(100vh - 68px);
+  overflow-y: auto;
 }
-/* ─── ONLY MOBILE HAMBURGER MENU - FINAL SAFE FIX ───────────────── */
+.mobmenu.open {
+  display: block;
+}
+.mobmenu a {
+  display: block;
+  padding: .9rem 1.6rem;
+  color: var(--textMed);
+  font-family: 'Rajdhani', sans-serif;
+  letter-spacing: 1.5px;
+  font-size: .9rem;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  transition: color .25s;
+}
+.mobmenu a:hover {
+  color: var(--gold);
+}
+
+/* ==================== ONLY MOBILE - SHOW HAMBURGER ==================== */
 @media (max-width: 960px) {
   .nlinks {
     display: none !important;
@@ -661,17 +678,8 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
   .mobmenu.open {
     display: block !important;
   }
-}
-
-/* Extra small screens */
-@media (max-width: 480px) {
-  .nlinks {
-    display: none !important;
-  }
-  .hmbg {
-    display: flex !important;
-  }
-}/style>
+}  
+</style>
 </head>
 <body>
 
