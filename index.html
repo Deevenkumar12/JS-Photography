@@ -618,67 +618,160 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
 /* ─── RESPONSIVE ─────────────────────────────────── */
 @media(max-width:960px){
   .nlinks{display:none;}
-/* ==================== HAMBURGER MENU - ONLY MOBILE ==================== */
-.hmbg {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  padding: 7px;
-  background: none;
-  border: none;
-  cursor: pointer;
+  .hmbg{display:flex;}
+  .homesvc{grid-template-columns:1fr 1fr;}
+  .aboutwrap{grid-template-columns:1fr;gap:3rem;padding:2.5rem 1.5rem 4rem;}
+  .aport{position:static;}
+  .contwrap{grid-template-columns:1fr;gap:2.2rem;}
+  .mapsgrid{grid-template-columns:1fr;}
+  .admstats{grid-template-columns:1fr 1fr;}
+  .frow{grid-template-columns:1fr;}
+  .afrow{grid-template-columns:1fr;}
+  .pgrid{grid-template-columns:1fr 1fr;grid-auto-rows:auto;}
+  .pi:nth-child(1){grid-column:span 2;}
 }
-.hmbg span {
-  width: 23px;
-  height: 2px;
-  background: var(--gold);
-  border-radius: 2px;
-  display: block;
-  transition: all 0.3s;
+@media(max-width:640px){
+  html{font-size:16px;}
+
+  /* ── NAV ── */
+  nav{padding:0 1rem;}
+  .nlogo-txt .nsub{display:none;}
+  .lang-trigger{padding:5px 7px;font-size:.72rem;}
+  .lang-trigger svg:first-child{width:13px;height:13px;}
+  #activeLangLabel{display:none;}
+  .lang-caret{display:none;}
+  .lang-dropdown{right:-4px;}
+
+  /* ── HERO ── */
+  .hero{height:100svh;min-height:520px;}
+  .hcont{padding:0 1rem 3rem;}
+  .hjs{font-size:clamp(3.2rem,16vw,5rem);letter-spacing:4px;}
+  .hphoto{font-size:clamp(1.3rem,6.5vw,2rem);letter-spacing:4px;}
+  .heye{font-size:.65rem;letter-spacing:4px;}
+  .hsub{font-size:.7rem;letter-spacing:3px;margin:.5rem 0 1.2rem;}
+  .hbtns{gap:.7rem;}
+  .btng,.btno{padding:11px 22px;font-size:.78rem;letter-spacing:1.5px;}
+  .hdots{right:1rem;bottom:1rem;}
+  .hscroll{bottom:.5rem;}
+
+  /* ── STATS ── */
+  .stats{flex-direction:column;}
+  .stat{padding:1.4rem 1.2rem;}
+  .stat:not(:last-child)::after{display:none;}
+  .statnum{font-size:2.2rem;}
+
+  /* ── SECTIONS ── */
+  .sec{padding:3.2rem 1.1rem;}
+  .sechd{margin-bottom:2.2rem;}
+  .sectit{font-size:clamp(1.6rem,7vw,2.2rem);}
+
+  /* ── HOME SERVICES ── */
+  .homesvc{grid-template-columns:1fr;}
+  .sc{aspect-ratio:16/9;}
+  .scname{font-size:1.1rem;}
+
+  /* ── PORTFOLIO GRID ── */
+  .pgrid{grid-template-columns:1fr;}
+  .pi:nth-child(1){grid-column:span 1;}
+  .pgrid .pi{height:220px;}
+
+  /* ── MEMORIES ── */
+  .memgrid{grid-template-columns:1fr;gap:16px;}
+  .mimg img{height:auto;max-height:420px;}
+  .memcta p{font-size:1rem;}
+
+  /* ── GALLERY ── */
+  .galfils{gap:.4rem;justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding-bottom:.5rem;-webkit-overflow-scrolling:touch;}
+  .galfils::-webkit-scrollbar{height:3px;}
+  .galfils::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px;}
+  .fbtn{padding:7px 12px;font-size:.72rem;white-space:nowrap;flex-shrink:0;}
+  .galgrid{columns:2 140px;}
+
+  /* ── SERVICES TABS ── */
+  .svchead{overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap;padding-bottom:2px;}
+  .svchead::-webkit-scrollbar{height:2px;}
+  .svchead::-webkit-scrollbar-thumb{background:var(--gold);}
+  .tbtn{padding:9px 14px;font-size:.75rem;letter-spacing:1px;}
+  .tpane{grid-template-columns:1fr!important;}
+  .svc2{flex-direction:column;}
+  .svc2img{height:200px;width:100%;}
+  .svc2info{padding:1rem;}
+
+  /* ── ABOUT ── */
+  .aboutwrap{padding:2rem 1.2rem 3rem;}
+  .aname{font-size:1.8rem;}
+  .abadge{padding:.65rem 1rem;}
+  .asoc{gap:.6rem;}
+  .asoc a{padding:7px 12px;font-size:.78rem;}
+
+  /* ── BOOKING ── */
+  .bookcard{padding:1.4rem 1.1rem;}
+  .bookwrap{gap:1.2rem;}
+  .phone-wrap{flex-direction:row;}
+  .country-sel{min-width:80px;font-size:.8rem;padding:9px 6px;padding-right:18px;}
+  .timeslots{gap:6px;}
+  .tslot{padding:8px 11px;font-size:.76rem;}
+  .bk-select{font-size:.85rem;}
+  .fg label{font-size:.72rem;letter-spacing:1.5px;}
+
+  /* ── CONTACT ── */
+  .clink{padding:9px 12px;font-size:.82rem;}
+  .clink-num{font-size:.88rem;}
+  .clink-row{flex-direction:column;gap:8px;}
+  .contmap iframe{height:220px;}
+  .cform{padding:1.4rem 1.1rem;}
+
+  /* ── REVIEWS ── */
+  .revgrid{grid-template-columns:1fr;}
+
+  /* ── ADMIN ── */
+  .admstats{grid-template-columns:1fr 1fr;}
+  .admtabs{overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;}
+  .atbtn{padding:9px 14px;font-size:.75rem;}
+
+  /* ── FOOTER ── */
+  .ftsoc{gap:.8rem;}
+  .fsi{padding:7px 12px;font-size:.75rem;}
+  .ftaddrs{flex-direction:column;gap:1rem;}
+  .ftcopy{font-size:.68rem;letter-spacing:.5px;}
+
+  /* ── CONTACT HUB ── */
+  .chub{right:.8rem;bottom:.8rem;}
+  .ci-lbl{font-size:.7rem;max-width:110px;}
+
+  /* ── MODALS ── */
+  .modbox{padding:1.8rem 1.2rem;margin:1rem;}
+  .admcard{padding:1.8rem 1.2rem;}
+
+  /* ── BOOKING SUCCESS ── */
+  .bk-summary{padding:1rem;}
+  .bk-summary p{font-size:.88rem;}
 }
 
-/* Mobile Menu */
-.mobmenu {
-  display: none;
-  position: fixed;
-  top: 68px;
-  left: 0;
-  width: 100%;
-  background: rgba(17,18,20,.98);
-  z-index: 8999;
-  border-bottom: 1px solid var(--borderGold);
-  max-height: calc(100vh - 68px);
-  overflow-y: auto;
-}
-.mobmenu.open {
-  display: block;
-}
-.mobmenu a {
-  display: block;
-  padding: .9rem 1.6rem;
-  color: var(--textMed);
-  font-family: 'Rajdhani', sans-serif;
-  letter-spacing: 1.5px;
-  font-size: .9rem;
-  border-bottom: 1px solid rgba(255,255,255,.05);
-  transition: color .25s;
-}
-.mobmenu a:hover {
-  color: var(--gold);
+@media(max-width:400px){
+  .galgrid{columns:1;}
+  .hjs{font-size:3.2rem;letter-spacing:3px;}
+  .hsub{letter-spacing:2px;font-size:.68rem;}
+  .hphoto{font-size:1.3rem;letter-spacing:3px;}
+  .tslot{padding:7px 9px;font-size:.72rem;}
+  .fbtn{padding:6px 10px;font-size:.68rem;}
+  .statnum{font-size:2rem;}
 }
 
-/* ==================== ONLY MOBILE - SHOW HAMBURGER ==================== */
-@media (max-width: 960px) {
-  .nlinks {
-    display: none !important;
-  }
-  .hmbg {
-    display: flex !important;
-  }
-  .mobmenu.open {
-    display: block !important;
-  }
-}  
+/* ── TOUCH DEVICES: remove hover effects that cause delay ── */
+@media(hover:none){
+  .sc:hover img{transform:none;}
+  .sc:hover .scdesc{max-height:0;}
+  .scov{background:linear-gradient(to top,rgba(0,0,0,.82) 0%,transparent 65%);}
+  .scdesc{max-height:none;overflow:visible;}
+  .btng:hover,.btno:hover{transform:none;box-shadow:none;}
+}
+
+/* ── iOS safe area ── */
+@supports(padding-bottom:env(safe-area-inset-bottom)){
+  nav{padding-left:max(1rem,env(safe-area-inset-left));padding-right:max(1rem,env(safe-area-inset-right));}
+  .chub{bottom:max(.8rem,env(safe-area-inset-bottom));}
+}
 </style>
 </head>
 <body>
@@ -687,9 +780,18 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
 <div id="sparks"></div>
 
 <!-- MOBILE DESKTOP ALERT -->
-
-
-<!-- NAVBAR -->
+<div id="mobDesktopBar" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:99999;background:rgba(18,18,20,.97);border-top:1px solid rgba(255,215,0,.3);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-family:'Rajdhani',sans-serif;backdrop-filter:blur(12px);">
+  <span style="font-size:.78rem;color:rgba(255,255,255,.8);letter-spacing:.5px;flex:1;">💡 For best experience, enable <strong style="color:var(--gold);">Desktop Site</strong> in your browser</span>
+  <button onclick="document.getElementById('mobDesktopBar').style.display='none';sessionStorage.setItem('mb_bar','1');" style="background:transparent;border:1px solid rgba(255,215,0,.4);color:var(--gold);font-family:'Rajdhani',sans-serif;font-size:.7rem;padding:5px 10px;letter-spacing:1px;white-space:nowrap;">Got it ✕</button>
+</div>
+<script>
+(function(){
+  if(/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)&&!sessionStorage.getItem('mb_bar')){
+    var b=document.getElementById('mobDesktopBar');
+    if(b){b.style.display='flex';setTimeout(function(){b.style.display='none';},8000);}
+  }
+})();
+</script>
 <nav>
   <div class="nlogo" onclick="goPage('home')">
     <img src="https://res.cloudinary.com/dujwqprxl/image/upload/v1773896874/camera-hero_x4cpv6.png" alt="JS Photography" width="46" height="46" onerror="this.style.display='none'">
@@ -865,7 +967,7 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
       <div class="gline"></div>
     </div>
     <div class="revgrid" id="revGrid"></div>
-    <div style="text-align:center;"><button class="writebtn" onclick="openRevModal()">✍ Write a Review</button></div>
+    <div style="text-align:center;"><button class="writebtn" onclick="window.open('https://g.page/r/CWnZtpV-f1c9EAE/review','_blank')">✍ Write a Review</button></div>
   </section>
 </div>
 
@@ -1008,7 +1110,7 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
         <p>📸 Mangalavarapu Peta, Rajahmundry, 533101, AP</p>
         <p>📸 Srinivasapuram, Vambay Colony, Kovvur, 534350, AP</p>
         <p style="margin-top:.8rem;">💬 <a href="https://wa.me/919492070597">9492070597</a> &nbsp;|&nbsp; <a href="https://wa.me/919491365499">9491365499</a> (WhatsApp &amp; Call)</p>
-        <p>✉️ jsphotography8488@gmail.com</p>
+        <p>✉️ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e38990938b8c978c849182938b9adbd7dbdba3848e828a8fcd808c8e">[email&#160;protected]</a></p>
       </div>
 
       <!-- BOOKING FORM -->
@@ -1183,7 +1285,7 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
             </div>
           </div>
         </div>
-        <div class="cblock"><div class="clbl">✉️ Email</div><p><a href="mailto:jsphotography8488@gmail.com">jsphotography8488@gmail.com</a></p></div>
+        <div class="cblock"><div class="clbl">✉️ Email</div><p><a href="/cdn-cgi/l/email-protection#f19b8281999e859e968390819988c9c5c9c9b1969c90989ddf929e9c"><span class="__cf_email__" data-cfemail="97fde4e7fff8e3f8f0e5f6e7ffeeafa3afafd7f0faf6fefbb9f4f8fa">[email&#160;protected]</span></a></p></div>
         <div class="cblock"><div class="clbl">Follow Us</div><div style="display:flex;gap:.8rem;flex-wrap:wrap;margin-top:9px;">
           <a href="https://www.youtube.com/@jsphotographyevents" target="_blank" rel="noopener" class="fsi fsi-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1C4.5 20.5 12 20.5 12 20.5s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>YouTube</a>
           <a href="https://www.instagram.com/j_s__photography___?igsh=YzhicnhmejZvcDRu" target="_blank" rel="noopener" class="fsi fsi-ig"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8 0 3.2 0 3.6-.1 4.8-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1-3.2 0-3.6 0-4.8-.1-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12c0-3.2 0-3.6.1-4.8C2.4 3.9 4 2.3 7.2 2.3c1.2-.1 1.6-.1 4.8-.1zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9C.3 21.3 2.7 23.7 7.1 23.9 8.3 24 8.7 24 12 24s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9C23.7 2.7 21.3.3 16.9.1 15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"/></svg>Instagram</a>
@@ -1359,7 +1461,7 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
     <div class="ftaddr"><strong>📍 Rajahmundry</strong>Mangalavarapu Peta, Rajahmundry<br>533101, Andhra Pradesh</div>
     <div class="ftaddr"><strong>📍 Kovvur</strong>Srinivasapuram, Vambay Colony<br>Kovvur, 534350, Andhra Pradesh</div>
   </div>
-  <div class="ftcopy">© 2024 JS Photography · M. Dharma Rao · All Rights Reserved · jsphotography8488@gmail.com</div>
+  <div class="ftcopy">© 2024 JS Photography · M. Dharma Rao · All Rights Reserved · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="39534a4951564d565e4b58495140010d0101795e54585055175a5654">[email&#160;protected]</a></div>
 </footer>
 
 <!-- CONTACT HUB -->
@@ -1444,7 +1546,7 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
   <button class="lbnav lb-n" onclick="lbNav(1)">›</button>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ═══════════════════════════════════════
 // DATA
 // ═══════════════════════════════════════
@@ -2278,6 +2380,10 @@ document.addEventListener('click',function(e){
     }
   });
 })();
+
+// ═══════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════
 buildDots();
 startHero();
 renderRevs();
