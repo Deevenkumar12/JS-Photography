@@ -772,6 +772,53 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
   nav{padding-left:max(1rem,env(safe-area-inset-left));padding-right:max(1rem,env(safe-area-inset-right));}
   .chub{bottom:max(.8rem,env(safe-area-inset-bottom));}
 }
+
+/* Hide scrollbar on all browsers */
+html{scrollbar-width:none;-ms-overflow-style:none;}
+html::-webkit-scrollbar{display:none;}
+body{overflow-x:hidden;}
+
+/* ─── REVIEW PAGINATION ──────────────────────── */
+.rpg-btn{padding:7px 14px;background:var(--bg2);border:1px solid rgba(255,215,0,.2);color:var(--textMed);font-family:'Rajdhani',sans-serif;font-size:.82rem;font-weight:600;letter-spacing:1px;cursor:pointer;transition:all .25s;border-radius:3px;}
+.rpg-btn:hover{border-color:var(--gold);color:var(--gold);}
+.rpg-btn.rpg-active{background:var(--gold);border-color:var(--gold);color:#000;font-weight:700;}
+
+/* ─── HERO REVIEW LINK ───────────────────────── */
+.hero-review-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 20px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.75);font-family:'Rajdhani',sans-serif;font-size:.76rem;font-weight:600;letter-spacing:1.5px;text-decoration:none;text-transform:uppercase;border-radius:30px;transition:all .3s;backdrop-filter:blur(6px);}
+.hero-review-btn:hover{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.35);}
+
+/* ─── MEMORIES NAMES - CINEMATIC ─────────────── */
+.mname{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,.95),rgba(0,0,0,.4) 60%,transparent);padding:2rem 1.2rem 1.2rem;text-align:center;}
+.mname-text{
+  font-family:'Playfair Display',serif;
+  font-size:1.05rem;
+  font-weight:700;
+  font-style:italic;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#fff;
+  display:block;
+  position:relative;
+  text-shadow:0 0 20px rgba(255,215,0,.8),0 0 40px rgba(255,215,0,.4),0 2px 4px rgba(0,0,0,.9);
+  animation:nameGlow 3s ease-in-out infinite;
+}
+@keyframes nameGlow{
+  0%,100%{text-shadow:0 0 15px rgba(255,215,0,.6),0 0 30px rgba(255,215,0,.3),0 2px 4px rgba(0,0,0,.9);}
+  50%{text-shadow:0 0 30px rgba(255,215,0,1),0 0 60px rgba(255,215,0,.6),0 0 90px rgba(255,215,0,.2),0 2px 4px rgba(0,0,0,.9);}
+}
+.mname-text::before{
+  content:attr(data-text);
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,#fff 0%,#FFD700 40%,#FFA500 60%,#fff 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  filter:blur(0);
+}
+
+/* ─── MOBILE HERO IMAGE FIX ──────────────────── */
+@media(max-width:640px){
+  .hslide{background-position:center center !important;background-size:cover;}
+}
 </style>
 </head>
 <body>
@@ -794,7 +841,7 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
 </script>
 <nav>
   <div class="nlogo" onclick="goPage('home')">
-    <img src="https://res.cloudinary.com/dujwqprxl/image/upload/v1773896874/camera-hero_x4cpv6.png" alt="JS Photography" width="46" height="46" onerror="this.style.display='none'">
+    <img loading="lazy" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1773896874/camera-hero_x4cpv6.png" alt="JS Photography" width="46" height="46" onerror="this.style.display='none'">
     <div class="nlogo-txt">
       <div class="brand"><span class="njsspan">JS</span><span class="nrestspan">&nbsp;PHOTOGRAPHY</span></div>
       <div class="nsub">Rajahmundry · Kovvur</div>
@@ -845,19 +892,19 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
 
   <div class="hero">
     <div class="hslides" id="heroSlides">
-      <div class="hslide active" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/v1774256511/a510c85881f014be1a9a08bb90dcf124_myycy4.jpg');"></div>
-      <div class="hslide" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/v1774256529/f2f8373163770aadc40d08edba576b59_htxlhu.jpg');"></div>
-      <div class="hslide" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/v1774256370/2c990f4be146751e6805472047b44131_wdghud.jpg');"></div>
-      <div class="hslide" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/v1774256371/5543b15aa3822fd02bcd8dcc76eae555_jndukj.jpg');"></div>
-      <div class="hslide" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/v1774256371/8d4bf9128c652a36e2d2aa46643d183b_ay9lge.jpg');"></div>
-      <div class="hslide" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/v1774256371/60cd4089cbfa74dfd1a792bad9f97bd5_nmrjmy.jpg');"></div>
-      <div class="hslide" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/v1774256523/d1bb7590077c1bf016d8822f86da8e45_b7yndf.jpg');"></div>
-      <div class="hslide" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/v1774256372/6571bbba2fac9b4a1bc03cd530cc549e_okgx48.jpg');"></div>
-      <div class="hslide" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/v1774256525/dfd57ac8a9a99d67ea4e08590b951ace_k1giq4.jpg');"></div>
-      <div class="hslide" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/v1774256371/98aa8501bc16e48b20b197409995218a_hgmueu.jpg');"></div>
-      <div class="hslide" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/v1774256511/bbd79c97a20f065555a254d87027f7a8_mnmacr.jpg');"></div>
-      <div class="hslide" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/v1774256528/eaf83a51cd531f7669e3f801535ca681_hgmrnf.jpg');"></div>
-      <div class="hslide" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/v1774256374/4ee69c4b7894cf7e7f7978101c53fe5a_uznon0.jpg');"></div>
+      <div class="hslide active" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774256511/a510c85881f014be1a9a08bb90dcf124_myycy4.jpg');"></div>
+      <div class="hslide" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774256529/f2f8373163770aadc40d08edba576b59_htxlhu.jpg');"></div>
+      <div class="hslide" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774256370/2c990f4be146751e6805472047b44131_wdghud.jpg');"></div>
+      <div class="hslide" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774256371/5543b15aa3822fd02bcd8dcc76eae555_jndukj.jpg');"></div>
+      <div class="hslide" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774256371/8d4bf9128c652a36e2d2aa46643d183b_ay9lge.jpg');"></div>
+      <div class="hslide" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774256371/60cd4089cbfa74dfd1a792bad9f97bd5_nmrjmy.jpg');"></div>
+      <div class="hslide" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774256523/d1bb7590077c1bf016d8822f86da8e45_b7yndf.jpg');"></div>
+      <div class="hslide" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774256372/6571bbba2fac9b4a1bc03cd530cc549e_okgx48.jpg');"></div>
+      <div class="hslide" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774256525/dfd57ac8a9a99d67ea4e08590b951ace_k1giq4.jpg');"></div>
+      <div class="hslide" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774256371/98aa8501bc16e48b20b197409995218a_hgmueu.jpg');"></div>
+      <div class="hslide" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774256511/bbd79c97a20f065555a254d87027f7a8_mnmacr.jpg');"></div>
+      <div class="hslide" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774256528/eaf83a51cd531f7669e3f801535ca681_hgmrnf.jpg');"></div>
+      <div class="hslide" style="background-image:url('https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774256374/4ee69c4b7894cf7e7f7978101c53fe5a_uznon0.jpg');"></div>
     </div>
     <div class="hov"></div>
     <div class="hcont">
@@ -869,7 +916,13 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
       <div class="hsub">Rajahmundry &nbsp;·&nbsp; Kovvur &nbsp;·&nbsp; Andhra Pradesh</div>
       <div class="hbtns">
         <button class="btng" onclick="goPage('booking')">Book Your Date</button>
-        <button class="btno" onclick="goPage('gallery')">View Gallery</button>
+        <button class="btno" onclick="goPage('services')">Services</button>
+      </div>
+      <div style="margin-top:1.1rem;">
+        <a href="https://g.page/r/CWnZtpV-f1c9EAE/review" target="_blank" rel="noopener" class="hero-review-btn">
+          <svg width="13" height="13" viewBox="0 0 24 24" style="flex-shrink:0;"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          ✍ Write a Review on Google
+        </a>
       </div>
     </div>
     <div class="hscroll"><div class="scrollline"></div><div class="scrolltxt">SCROLL</div></div>
@@ -894,27 +947,27 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
     </div>
     <div class="homesvc">
       <div class="sc" onclick="goPage('services')">
-        <img src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774181858/candid-1-3_fcjpsa.png" alt="Candid Wedding" loading="lazy">
+        <img src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774181858/candid-1-3_fcjpsa.png" alt="Candid Wedding" loading="lazy">
         <div class="scov"><span class="sctag">Popular</span><div class="scname">Candid Wedding</div><div class="scdesc">Natural unposed moments with cinematic artistry</div></div>
       </div>
       <div class="sc" onclick="goPage('services')">
-        <img src="https://res.cloudinary.com/dujwqprxl/image/upload/v1773833723/couple_shoot_pejf2n.jpg" alt="Pre-Wedding" loading="lazy">
+        <img src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1773833723/couple_shoot_pejf2n.jpg" alt="Pre-Wedding" loading="lazy">
         <div class="scov"><span class="sctag">Trending</span><div class="scname">Pre-Wedding Shoot</div><div class="scdesc">Romantic couple stories before the big day</div></div>
       </div>
       <div class="sc" onclick="goPage('services')">
-        <img src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774181782/Haldi_Shoot_zfpcvo.png" alt="Haldi" loading="lazy">
+        <img src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774181782/Haldi_Shoot_zfpcvo.png" alt="Haldi" loading="lazy">
         <div class="scov"><div class="scname">Haldi & Mehendi</div><div class="scdesc">Vibrant celebration photography</div></div>
       </div>
       <div class="sc" onclick="goPage('services')">
-        <img src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774183788/Teaser_Video_ssmjwg.webp" alt="Videos" loading="lazy">
+        <img src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774183788/Teaser_Video_ssmjwg.webp" alt="Videos" loading="lazy">
         <div class="scov"><span class="sctag">Cinematic</span><div class="scname">Cinematic Films</div><div class="scdesc">Teaser, highlight & full wedding films</div></div>
       </div>
       <div class="sc" onclick="goPage('services')">
-        <img src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774184247/pexels-ashwin-shrigiri-1609244-7522839_yralcv.jpg" alt="Maternity" loading="lazy">
+        <img src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774184247/pexels-ashwin-shrigiri-1609244-7522839_yralcv.jpg" alt="Maternity" loading="lazy">
         <div class="scov"><div class="scname">Maternity Shoot</div><div class="scdesc">Beautiful memories of motherhood</div></div>
       </div>
       <div class="sc" onclick="goPage('services')">
-        <img src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774185170/wedding_album_design_oxymno.jpg" alt="Albums" loading="lazy">
+        <img src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774185170/wedding_album_design_oxymno.jpg" alt="Albums" loading="lazy">
         <div class="scov"><div class="scname">Album Design</div><div class="scdesc">Premium AI-enhanced album design</div></div>
       </div>
     </div>
@@ -928,12 +981,12 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
       <div class="gline"></div>
     </div>
     <div class="pgrid">
-      <div class="pi" onclick="openLbDirect('https://res.cloudinary.com/dujwqprxl/image/upload/v1774070702/marraiges00_zivvm8.jpg')"><img src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774070702/marraiges00_zivvm8.jpg" alt="Wedding" loading="lazy"><div class="piglow"></div></div>
-      <div class="pi" onclick="openLbDirect('https://res.cloudinary.com/dujwqprxl/image/upload/v1774181858/candid-1-3_fcjpsa.png')"><img src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774181858/candid-1-3_fcjpsa.png" alt="Candid" loading="lazy"><div class="piglow"></div></div>
-      <div class="pi" onclick="openLbDirect('https://res.cloudinary.com/dujwqprxl/image/upload/v1773833723/couple_shoot_pejf2n.jpg')"><img src="https://res.cloudinary.com/dujwqprxl/image/upload/v1773833723/couple_shoot_pejf2n.jpg" alt="Couple" loading="lazy"><div class="piglow"></div></div>
-      <div class="pi" onclick="openLbDirect('https://res.cloudinary.com/dujwqprxl/image/upload/v1774070678/Reception_shoot_gr8lei.png')"><img src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774070678/Reception_shoot_gr8lei.png" alt="Reception" loading="lazy"><div class="piglow"></div></div>
-      <div class="pi" onclick="openLbDirect('https://res.cloudinary.com/dujwqprxl/image/upload/v1774181782/Haldi_Shoot_zfpcvo.png')"><img src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774181782/Haldi_Shoot_zfpcvo.png" alt="Haldi" loading="lazy"><div class="piglow"></div></div>
-      <div class="pi" onclick="openLbDirect('https://res.cloudinary.com/dujwqprxl/image/upload/v1774182677/pre_wedding_song_xxlgop.jpg')"><img src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774182677/pre_wedding_song_xxlgop.jpg" alt="Pre-Wedding" loading="lazy"><div class="piglow"></div></div>
+      <div class="pi" onclick="openLbDirect('https://res.cloudinary.com/dujwqprxl/image/upload/v1774070702/marraiges00_zivvm8.jpg')"><img src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774070702/marraiges00_zivvm8.jpg" alt="Wedding" loading="lazy"><div class="piglow"></div></div>
+      <div class="pi" onclick="openLbDirect('https://res.cloudinary.com/dujwqprxl/image/upload/v1774181858/candid-1-3_fcjpsa.png')"><img src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774181858/candid-1-3_fcjpsa.png" alt="Candid" loading="lazy"><div class="piglow"></div></div>
+      <div class="pi" onclick="openLbDirect('https://res.cloudinary.com/dujwqprxl/image/upload/v1773833723/couple_shoot_pejf2n.jpg')"><img src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1773833723/couple_shoot_pejf2n.jpg" alt="Couple" loading="lazy"><div class="piglow"></div></div>
+      <div class="pi" onclick="openLbDirect('https://res.cloudinary.com/dujwqprxl/image/upload/v1774070678/Reception_shoot_gr8lei.png')"><img src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774070678/Reception_shoot_gr8lei.png" alt="Reception" loading="lazy"><div class="piglow"></div></div>
+      <div class="pi" onclick="openLbDirect('https://res.cloudinary.com/dujwqprxl/image/upload/v1774181782/Haldi_Shoot_zfpcvo.png')"><img src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774181782/Haldi_Shoot_zfpcvo.png" alt="Haldi" loading="lazy"><div class="piglow"></div></div>
+      <div class="pi" onclick="openLbDirect('https://res.cloudinary.com/dujwqprxl/image/upload/v1774182677/pre_wedding_song_xxlgop.jpg')"><img src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774182677/pre_wedding_song_xxlgop.jpg" alt="Pre-Wedding" loading="lazy"><div class="piglow"></div></div>
     </div>
     <div style="text-align:center;margin-top:2.2rem;"><button class="btng" onclick="goPage('gallery')">Explore Full Gallery</button></div>
   </section>
@@ -946,12 +999,12 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
     </div>
     <div class="memgrid">
       <div class="mimg">
-        <img src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774261747/jjjj.jpg_utqwdv.jpg" alt="M. Dharma Rao" class="gframe" loading="lazy">
-        <div class="mname">M. Dharma Rao</div>
+        <img src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774261747/jjjj.jpg_utqwdv.jpg" alt="M. Dharma Rao" class="gframe" loading="lazy">
+        <div class="mname"><span class="mname-text">M. Dharma Rao</span></div>
       </div>
       <div class="mimg">
-        <img src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774256870/retouch_2026032314082877.jpg_h1vkyf.jpg" alt="M. Deeven Kumar" class="gframe" loading="lazy">
-        <div class="mname">M. Deeven Kumar</div>
+        <img src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774256870/retouch_2026032314082877.jpg_h1vkyf.jpg" alt="M. Deeven Kumar" class="gframe" loading="lazy">
+        <div class="mname"><span class="mname-text">M. Deeven Kumar</span></div>
       </div>
     </div>
     <div class="memcta">
@@ -967,7 +1020,8 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
       <div class="gline"></div>
     </div>
     <div class="revgrid" id="revGrid"></div>
-    <div style="text-align:center;"><button class="writebtn" onclick="window.open('https://g.page/r/CWnZtpV-f1c9EAE/review','_blank')">✍ Write a Review</button></div>
+    <div id="revPagination" style="display:flex;justify-content:center;gap:8px;margin:1.8rem 0 1rem;flex-wrap:wrap;"></div>
+    <div style="text-align:center;margin-top:.5rem;"><button class="writebtn" onclick="window.open('https://g.page/r/CWnZtpV-f1c9EAE/review','_blank')">✍ Write a Review on Google</button></div>
   </section>
 </div>
 
@@ -978,7 +1032,7 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
   </section>
   <div class="aboutwrap">
     <div class="aport">
-      <img src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774261747/jjjj.jpg_utqwdv.jpg" alt="M. Dharma Rao" class="aportimg" loading="lazy">
+      <img src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774261747/jjjj.jpg_utqwdv.jpg" alt="M. Dharma Rao" class="aportimg" loading="lazy">
       <div class="abadge"><span class="bn">18+</span><span class="bt">Years of Excellence</span></div>
     </div>
     <div>
@@ -1037,47 +1091,47 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
       <button class="tbtn" onclick="stab('oth',this)">Other</button>
     </div>
     <div id="t-wed" class="tpane active">
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774181858/candid-1-3_fcjpsa.png" alt="Candid Wedding" loading="lazy"><div class="svc2info"><div class="svc2name">Candid Wedding</div><div class="svc2desc">Natural, unposed moments captured with cinematic artistry on your special day.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774244866/Traditional_Wedding_gpkyqv.jpg" alt="Traditional Wedding" loading="lazy" style="object-position:center 20%;"><div class="svc2info"><div class="svc2name">Traditional Wedding</div><div class="svc2desc">Complete traditional ceremony coverage with HD photography and videography.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774181798/hero-4_evb5pc.jpg" alt="Hindu Ceremony" loading="lazy"><div class="svc2info"><div class="svc2name">Hindu Ceremony</div><div class="svc2desc">Every sacred ritual captured with reverence and artistic vision.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774182338/Christian_wedding_mgo133.jpg" alt="Christian Wedding" loading="lazy"><div class="svc2info"><div class="svc2name">Christian Wedding</div><div class="svc2desc">Church weddings photographed with elegance and emotion.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774181858/candid-1-3_fcjpsa.png" alt="Candid Wedding" loading="lazy"><div class="svc2info"><div class="svc2name">Candid Wedding</div><div class="svc2desc">Natural, unposed moments captured with cinematic artistry on your special day.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774244866/Traditional_Wedding_gpkyqv.jpg" alt="Traditional Wedding" loading="lazy" style="object-position:center 20%;"><div class="svc2info"><div class="svc2name">Traditional Wedding</div><div class="svc2desc">Complete traditional ceremony coverage with HD photography and videography.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774181798/hero-4_evb5pc.jpg" alt="Hindu Ceremony" loading="lazy"><div class="svc2info"><div class="svc2name">Hindu Ceremony</div><div class="svc2desc">Every sacred ritual captured with reverence and artistic vision.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774182338/Christian_wedding_mgo133.jpg" alt="Christian Wedding" loading="lazy"><div class="svc2info"><div class="svc2name">Christian Wedding</div><div class="svc2desc">Church weddings photographed with elegance and emotion.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
     </div>
     <div id="t-pre" class="tpane">
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1773833723/couple_shoot_pejf2n.jpg" alt="Couple Shoot" loading="lazy"><div class="svc2info"><div class="svc2name">Couple Shoot</div><div class="svc2desc">Romantic storytelling sessions capturing chemistry and joy.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774182677/pre_wedding_song_xxlgop.jpg" alt="Pre-Wedding Song" loading="lazy"><div class="svc2info"><div class="svc2name">Pre-Wedding Song</div><div class="svc2desc">Cinematic short film set to music — a trending premium package.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774182922/pexels-nhoc-nhoc-48869595-7590727_nva2kd.jpg" alt="Outdoor Shoot" loading="lazy"><div class="svc2info"><div class="svc2name">Outdoor Shoot</div><div class="svc2desc">Natural landscapes, gardens &amp; heritage sites — outdoor sessions.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774182921/pexels-luan-phan-38715772-7216413_fzpbgt.jpg" alt="Beach Shoot" loading="lazy"><div class="svc2info"><div class="svc2name">Beach / Location Shoot</div><div class="svc2desc">Exotic shoots at beaches and travel destinations.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1773833723/couple_shoot_pejf2n.jpg" alt="Couple Shoot" loading="lazy"><div class="svc2info"><div class="svc2name">Couple Shoot</div><div class="svc2desc">Romantic storytelling sessions capturing chemistry and joy.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774182677/pre_wedding_song_xxlgop.jpg" alt="Pre-Wedding Song" loading="lazy"><div class="svc2info"><div class="svc2name">Pre-Wedding Song</div><div class="svc2desc">Cinematic short film set to music — a trending premium package.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774182922/pexels-nhoc-nhoc-48869595-7590727_nva2kd.jpg" alt="Outdoor Shoot" loading="lazy"><div class="svc2info"><div class="svc2name">Outdoor Shoot</div><div class="svc2desc">Natural landscapes, gardens &amp; heritage sites — outdoor sessions.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774182921/pexels-luan-phan-38715772-7216413_fzpbgt.jpg" alt="Beach Shoot" loading="lazy"><div class="svc2info"><div class="svc2name">Beach / Location Shoot</div><div class="svc2desc">Exotic shoots at beaches and travel destinations.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
     </div>
     <div id="t-evt" class="tpane">
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774181782/Haldi_Shoot_zfpcvo.png" alt="Haldi" loading="lazy"><div class="svc2info"><div class="svc2name">Haldi Ceremony</div><div class="svc2desc">Vibrant colors and joyful energy captured in every frame.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774070678/Mehendi_shoot_wjuf6l.png" alt="Mehendi" loading="lazy"><div class="svc2info"><div class="svc2name">Mehendi Night</div><div class="svc2desc">Intricate henna artistry and candid celebration moments.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774244867/Reception_pnd5ly.jpg" alt="Reception" loading="lazy" style="object-position:center 20%;"><div class="svc2info"><div class="svc2name">Reception</div><div class="svc2desc">Grand reception photography with full stage and candid coverage.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774183433/pexels-pavel-danilyuk-7180623_bqpe4y.jpg" alt="Birthday" loading="lazy"><div class="svc2info"><div class="svc2name">Birthday &amp; Events</div><div class="svc2desc">Naming ceremonies, puberty functions, birthday celebrations.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774181782/Haldi_Shoot_zfpcvo.png" alt="Haldi" loading="lazy"><div class="svc2info"><div class="svc2name">Haldi Ceremony</div><div class="svc2desc">Vibrant colors and joyful energy captured in every frame.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774070678/Mehendi_shoot_wjuf6l.png" alt="Mehendi" loading="lazy"><div class="svc2info"><div class="svc2name">Mehendi Night</div><div class="svc2desc">Intricate henna artistry and candid celebration moments.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774244867/Reception_pnd5ly.jpg" alt="Reception" loading="lazy" style="object-position:center 20%;"><div class="svc2info"><div class="svc2name">Reception</div><div class="svc2desc">Grand reception photography with full stage and candid coverage.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774183433/pexels-pavel-danilyuk-7180623_bqpe4y.jpg" alt="Birthday" loading="lazy"><div class="svc2info"><div class="svc2name">Birthday &amp; Events</div><div class="svc2desc">Naming ceremonies, puberty functions, birthday celebrations.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
     </div>
     <div id="t-vid" class="tpane">
-          <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774183788/Teaser_Video_ssmjwg.webp" alt="Teaser" loading="lazy"><div class="svc2info"><div class="svc2name">Teaser Video</div><div class="svc2desc">Short cinematic teasers — the highlight of highlights.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-          <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774334314/pexels-imagestudio-1488315_pigpnr.jpg" alt="Highlight Video" loading="lazy"><div class="svc2info"><div class="svc2name">Highlight Video</div><div class="svc2desc">10–15 minute cinematic wedding highlight film.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-          <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774183919/Reels-shoot-5_v0ctx6.png" alt="Reels" loading="lazy"><div class="svc2info"><div class="svc2name">Reels / Shorts</div><div class="svc2desc">Instagram Reels and YouTube Shorts — shareable wedding content.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-          <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774183787/Wedding_film_ycbl9b.jpg" alt="Full Film" loading="lazy"><div class="svc2info"><div class="svc2name">Full Wedding Film</div><div class="svc2desc">Complete cinematic documentary of your entire wedding day.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+          <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774183788/Teaser_Video_ssmjwg.webp" alt="Teaser" loading="lazy"><div class="svc2info"><div class="svc2name">Teaser Video</div><div class="svc2desc">Short cinematic teasers — the highlight of highlights.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+          <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774334314/pexels-imagestudio-1488315_pigpnr.jpg" alt="Highlight Video" loading="lazy"><div class="svc2info"><div class="svc2name">Highlight Video</div><div class="svc2desc">10–15 minute cinematic wedding highlight film.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+          <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774183919/Reels-shoot-5_v0ctx6.png" alt="Reels" loading="lazy"><div class="svc2info"><div class="svc2name">Reels / Shorts</div><div class="svc2desc">Instagram Reels and YouTube Shorts — shareable wedding content.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+          <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774183787/Wedding_film_ycbl9b.jpg" alt="Full Film" loading="lazy"><div class="svc2info"><div class="svc2name">Full Wedding Film</div><div class="svc2desc">Complete cinematic documentary of your entire wedding day.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
         </div>
     <div id="t-spe" class="tpane">
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774184247/pexels-ashwin-shrigiri-1609244-7522839_yralcv.jpg" alt="Maternity" loading="lazy"><div class="svc2info"><div class="svc2name">Maternity Shoot</div><div class="svc2desc">Celebrating the beauty of motherhood with artistic photography.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774184457/pexels-helenalopes-10028013_iutmo2.jpg" alt="Baby Shoot" loading="lazy"><div class="svc2info"><div class="svc2name">Baby / Newborn Shoot</div><div class="svc2desc">Precious first memories of your newborn captured perfectly.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774184091/pexels-lorenzomessinaph-7270666_lvia28.jpg" alt="Product" loading="lazy"><div class="svc2info"><div class="svc2name">Product Photography</div><div class="svc2desc">Professional product shoots for businesses and brands.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774184454/pexels-kowal-tyler-1071716-5958898_o6ytcd.jpg" alt="Drone" loading="lazy"><div class="svc2info"><div class="svc2name">Drone Aerial</div><div class="svc2desc">Breathtaking aerial perspectives of venues and events.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774184247/pexels-ashwin-shrigiri-1609244-7522839_yralcv.jpg" alt="Maternity" loading="lazy"><div class="svc2info"><div class="svc2name">Maternity Shoot</div><div class="svc2desc">Celebrating the beauty of motherhood with artistic photography.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774184457/pexels-helenalopes-10028013_iutmo2.jpg" alt="Baby Shoot" loading="lazy"><div class="svc2info"><div class="svc2name">Baby / Newborn Shoot</div><div class="svc2desc">Precious first memories of your newborn captured perfectly.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774184091/pexels-lorenzomessinaph-7270666_lvia28.jpg" alt="Product" loading="lazy"><div class="svc2info"><div class="svc2name">Product Photography</div><div class="svc2desc">Professional product shoots for businesses and brands.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774184454/pexels-kowal-tyler-1071716-5958898_o6ytcd.jpg" alt="Drone" loading="lazy"><div class="svc2info"><div class="svc2name">Drone Aerial</div><div class="svc2desc">Breathtaking aerial perspectives of venues and events.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
     </div>
     <div id="t-alb" class="tpane">
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774185170/wedding_album_design_oxymno.jpg" alt="Album Design" loading="lazy"><div class="svc2info"><div class="svc2name">Wedding Album Design</div><div class="svc2desc">Premium AI-enhanced album design with luxury printing options.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1773833718/album_r3iim3.jpg" alt="Photo Books" loading="lazy"><div class="svc2info"><div class="svc2name">Photo Books</div><div class="svc2desc">Elegant coffee-table photo books for every occasion.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774185166/canvas_print_vaosb2.jpg" alt="Canvas" loading="lazy"><div class="svc2info"><div class="svc2name">Canvas Prints</div><div class="svc2desc">Large format canvas art prints for your home.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774185169/personalize-gifts-items-clocks-tshirts-mugs-key-rings_furzsq.jpg" alt="Gifts" loading="lazy"><div class="svc2info"><div class="svc2name">Photo Mugs &amp; Gifts</div><div class="svc2desc">Personalized gifts — mugs, frames, clocks, t-shirts and more.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774185170/wedding_album_design_oxymno.jpg" alt="Album Design" loading="lazy"><div class="svc2info"><div class="svc2name">Wedding Album Design</div><div class="svc2desc">Premium AI-enhanced album design with luxury printing options.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1773833718/album_r3iim3.jpg" alt="Photo Books" loading="lazy"><div class="svc2info"><div class="svc2name">Photo Books</div><div class="svc2desc">Elegant coffee-table photo books for every occasion.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774185166/canvas_print_vaosb2.jpg" alt="Canvas" loading="lazy"><div class="svc2info"><div class="svc2name">Canvas Prints</div><div class="svc2desc">Large format canvas art prints for your home.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774185169/personalize-gifts-items-clocks-tshirts-mugs-key-rings_furzsq.jpg" alt="Gifts" loading="lazy"><div class="svc2info"><div class="svc2name">Photo Mugs &amp; Gifts</div><div class="svc2desc">Personalized gifts — mugs, frames, clocks, t-shirts and more.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
     </div>
     <div id="t-oth" class="tpane">
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774269262/AI_ksjwhy.jpg" alt="AI Videos" loading="lazy"><div class="svc2info"><div class="svc2name">AI Videos</div><div class="svc2desc">Next-gen AI-powered video creation with stunning effects and cinematic quality.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774334323/fotis-fotopoulos-DuHKoV44prg-unsplash_l3msrd.jpg" alt="Website Development" loading="lazy"><div class="svc2info"><div class="svc2name">Website Development</div><div class="svc2desc">Professional website design and development services for your business.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774269264/mixing_iggzgn.jpg" alt="Wedding Video Mixing" loading="lazy"><div class="svc2info"><div class="svc2name">Wedding Video Mixing</div><div class="svc2desc">Professional wedding video editing with advanced mixing and color grading.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774334476/software_v9ogti.avif" alt="Software Installation & Backup" loading="lazy"><div class="svc2info"><div class="svc2name">Software Installation & Backup</div><div class="svc2desc">Professional software setup, installation, and backup solutions for photography & video editing workflows.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
-      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/v1774269262/os_pbdtfd.webp" alt="OS Installation" loading="lazy"><div class="svc2info"><div class="svc2name">OS Installation</div><div class="svc2desc">Windows & other operating system installation and configuration services.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774269262/AI_ksjwhy.jpg" alt="AI Videos" loading="lazy"><div class="svc2info"><div class="svc2name">AI Videos</div><div class="svc2desc">Next-gen AI-powered video creation with stunning effects and cinematic quality.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774334323/fotis-fotopoulos-DuHKoV44prg-unsplash_l3msrd.jpg" alt="Website Development" loading="lazy"><div class="svc2info"><div class="svc2name">Website Development</div><div class="svc2desc">Professional website design and development services for your business.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774269264/mixing_iggzgn.jpg" alt="Wedding Video Mixing" loading="lazy"><div class="svc2info"><div class="svc2name">Wedding Video Mixing</div><div class="svc2desc">Professional wedding video editing with advanced mixing and color grading.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774334476/software_v9ogti.avif" alt="Software Installation & Backup" loading="lazy"><div class="svc2info"><div class="svc2name">Software Installation & Backup</div><div class="svc2desc">Professional software setup, installation, and backup solutions for photography & video editing workflows.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
+      <div class="svc2"><img class="svc2img" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1774269262/os_pbdtfd.webp" alt="OS Installation" loading="lazy"><div class="svc2info"><div class="svc2name">OS Installation</div><div class="svc2desc">Windows & other operating system installation and configuration services.</div><button class="svc2btn" onclick="goPage('booking')">Book This Service</button></div></div>
     </div>
   </section>
 </div>
@@ -1385,7 +1439,11 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
         <div class="afrow"><input class="ainp" id="aRN" placeholder="Name"><input class="ainp" id="aRC" placeholder="City"></div>
         <div class="afrow"><input class="ainp" id="aRS" type="number" min="1" max="5" value="5" placeholder="Stars (1-5)"><input class="ainp" id="aRL" placeholder="Service / Occasion (optional)"></div>
         <div style="margin-bottom:.9rem;"><textarea class="ainp" id="aRT" style="height:70px;" placeholder="Review text..."></textarea></div>
+        <div style="margin-bottom:.9rem;"><input class="ainp" id="aRSRC" placeholder="Source (e.g. Google, Website) — optional"></div>
         <button class="abtn" onclick="addReview()">Add Review</button>
+        <div style="margin-top:.8rem;padding:.7rem;background:rgba(66,133,244,.08);border:1px solid rgba(66,133,244,.25);font-family:Rajdhani,sans-serif;font-size:.76rem;color:rgba(255,255,255,.6);letter-spacing:.5px;">
+          💡 To add Google reviews: Go to <a href="https://g.page/r/CWnZtpV-f1c9EAE/review" target="_blank" style="color:#4285F4;">Google Reviews</a> → copy customer review text → paste above → click Add Review. It will appear on Home page instantly.
+        </div>
       </div>
       <div class="abox"><h4>All Reviews (<span id="rCount">0</span>)</h4><div style="overflow-x:auto;"><table class="atbl"><thead><tr><th>Name</th><th>City</th><th>Stars</th><th>Review</th><th>Action</th></tr></thead><tbody id="rBody"></tbody></table></div></div>
     </div>
@@ -1433,7 +1491,7 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
 <!-- FOOTER -->
 <footer>
   <div class="ftlogo">
-    <img src="https://res.cloudinary.com/dujwqprxl/image/upload/v1773896874/camera-hero_x4cpv6.png" alt="JS Photography" width="34" height="34" onerror="this.style.display='none'">
+    <img loading="lazy" src="https://res.cloudinary.com/dujwqprxl/image/upload/q_auto,f_auto/v1773896874/camera-hero_x4cpv6.png" alt="JS Photography" width="34" height="34" onerror="this.style.display='none'">
     <div class="nlogo-txt">
       <div class="brand"><span class="njsspan">JS</span><span class="nrestspan">&nbsp;PHOTOGRAPHY</span></div>
       <div class="nsub">Rajahmundry · Kovvur</div>
@@ -1542,7 +1600,7 @@ footer{background:#0d0e10;border-top:1px solid var(--borderGold);padding:2.5rem 
 <div class="lb" id="lb">
   <button class="lbcls" onclick="closeLb()">×</button>
   <button class="lbnav lb-p" onclick="lbNav(-1)">‹</button>
-  <img src="" alt="Gallery" id="lbImg">
+  <img loading="lazy" src="" alt="Gallery" id="lbImg">
   <button class="lbnav lb-n" onclick="lbNav(1)">›</button>
 </div>
 
@@ -1739,11 +1797,33 @@ function lbNav(d){lbIdx=(lbIdx+d+lbImgs.length)%lbImgs.length;document.getElemen
 // ═══════════════════════════════════════
 // REVIEWS
 // ═══════════════════════════════════════
-function renderRevs(){
+var revCurrentPage=1;var REV_PER_PAGE=5;
+function renderRevs(page){
+  page=page||revCurrentPage;revCurrentPage=page;
   var g=document.getElementById('revGrid');if(!g)return;
-  g.innerHTML=reviews.slice(0,10).map(function(r){
-    return '<div class="rcard"><div class="rstars">'+Array(r.stars+1).join('★')+Array(6-r.stars).join('☆')+'<\/div><div class="rtxt">'+r.text+'<\/div><div class="rauth">'+r.name+'<\/div><div class="rcity">'+r.city+'<\/div><\/div>';
+  if(!reviews.length){g.innerHTML='<p style="text-align:center;color:var(--textDim);padding:2rem;">No reviews yet. Be the first!</p>';return;}
+  var total=reviews.length;
+  var totalPages=Math.ceil(total/REV_PER_PAGE);
+  var start=(page-1)*REV_PER_PAGE;
+  var pageRevs=reviews.slice(start,start+REV_PER_PAGE);
+  var GSVG='<svg width="11" height="11" viewBox="0 0 24 24" style="flex-shrink:0;vertical-align:middle;"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"><\/path><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"><\/path><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"><\/path><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"><\/path><\/svg>';
+  g.innerHTML=pageRevs.map(function(r){
+    var isGoogle=r.src&&r.src.toLowerCase().indexOf('google')>-1;
+    var badge=isGoogle?'<div style="display:flex;align-items:center;gap:5px;margin-bottom:.5rem;"><span style="font-size:.68rem;color:#4285F4;font-family:Rajdhani,sans-serif;letter-spacing:1px;display:inline-flex;align-items:center;gap:3px;">'+GSVG+' Google<\/span>'+(r.time?'<span style="font-size:.66rem;color:var(--textDim);font-family:Rajdhani,sans-serif;margin-left:4px;">· '+r.time+'<\/span>':'')+'<\/div>':'';
+    return '<div class="rcard">'+badge+'<div class="rstars">'+Array(r.stars+1).join('★')+Array(6-r.stars).join('☆')+'<\/div><div class="rtxt">'+r.text+'<\/div><div class="rauth">'+r.name+'<\/div><div class="rcity">'+r.city+'<\/div><\/div>';
   }).join('');
+  // Pagination
+  var pg=document.getElementById('revPagination');
+  if(pg){
+    if(totalPages<=1){pg.innerHTML='';return;}
+    var btns='';
+    if(page>1)btns+='<button class="rpg-btn" onclick="renderRevs('+(page-1)+')">‹</button>';
+    for(var i=1;i<=totalPages;i++){
+      btns+='<button class="rpg-btn'+(i===page?' rpg-active':'')+'" onclick="renderRevs('+i+')">'+i+'</button>';
+    }
+    if(page<totalPages)btns+='<button class="rpg-btn" onclick="renderRevs('+(page+1)+')">›</button>';
+    pg.innerHTML=btns;
+  }
 }
 function openRevModal(){document.getElementById('revModal').classList.add('open');starVal=0;updStars();}
 function closeRevModal(){document.getElementById('revModal').classList.remove('open');}
@@ -1756,7 +1836,7 @@ function submitReview(){
   if(!n||!t||!starVal){alert('Please fill all fields and select stars!');return;}
   reviews.unshift({name:n,city:ci||'Andhra Pradesh',stars:starVal,text:t});
   localStorage.setItem('js_rev',JSON.stringify(reviews));
-  closeRevModal();renderRevs();
+  closeRevModal();revCurrentPage=1;renderRevs(1);
   document.getElementById('rName').value='';document.getElementById('rCity').value='';document.getElementById('rText').value='';starVal=0;
   alert('Thank you! Your review has been published.');
 }
@@ -2046,33 +2126,88 @@ function renderAdmR(){
   var tb=document.getElementById('rBody');if(!tb)return;
   tb.innerHTML=reviews.map(function(r,i){return '<tr><td>'+r.name+'<\/td><td>'+r.city+'<\/td><td style="color:var(--gold)">'+Array(r.stars+1).join('★')+'<\/td><td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">'+r.text+'<\/td><td><button class="adel" onclick="delR('+i+')">Delete<\/button><\/td><\/tr>';}).join('');
 }
-function delR(i){if(!confirm('Delete review?'))return;reviews.splice(i,1);localStorage.setItem('js_rev',JSON.stringify(reviews));document.getElementById('dRev').textContent=reviews.length;if(document.getElementById('rCount'))document.getElementById('rCount').textContent=reviews.length;renderAdmR();renderRevs();}
+function delR(i){if(!confirm('Delete review?'))return;reviews.splice(i,1);localStorage.setItem('js_rev',JSON.stringify(reviews));document.getElementById('dRev').textContent=reviews.length;if(document.getElementById('rCount'))document.getElementById('rCount').textContent=reviews.length;renderAdmR();revCurrentPage=1;renderRevs(1);}
 function addReview(){
   var n=document.getElementById('aRN').value.trim(),t=document.getElementById('aRT').value.trim();
   if(!n||!t){alert('Fill name and review!');return;}
   var s=Math.min(5,Math.max(1,parseInt(document.getElementById('aRS').value)||5));
-  reviews.unshift({name:n,city:document.getElementById('aRC').value.trim()||'AP',stars:s,text:t});
+  var src=document.getElementById('aRSRC')?document.getElementById('aRSRC').value.trim():'';
+  reviews.unshift({name:n,city:document.getElementById('aRC').value.trim()||'AP',stars:s,text:t,src:src});
   localStorage.setItem('js_rev',JSON.stringify(reviews));
-  renderAdmR();renderRevs();document.getElementById('dRev').textContent=reviews.length;if(document.getElementById('rCount'))document.getElementById('rCount').textContent=reviews.length;
+  revCurrentPage=1;renderAdmR();renderRevs(1);document.getElementById('dRev').textContent=reviews.length;
+  if(document.getElementById('rCount'))document.getElementById('rCount').textContent=reviews.length;
   document.getElementById('aRN').value='';document.getElementById('aRC').value='';document.getElementById('aRT').value='';
-  alert('Review added!');
+  if(document.getElementById('aRSRC'))document.getElementById('aRSRC').value='';
+  alert('Review added! ✅ Visible on Home page now.');
 }
 function renderAdmG(){
   var el=document.getElementById('galAdm');if(!el)return;
   if(document.getElementById('gCount'))document.getElementById('gCount').textContent=gallery.length;
   document.getElementById('dGal').textContent=gallery.length;
-  el.innerHTML=gallery.map(function(g,i){return '<div style="background:var(--bg3);border:1px solid rgba(255,215,0,.1);overflow:hidden;"><img src="'+g.u+'" style="width:100%;height:90px;object-fit:cover;display:block;" onerror="this.style.background=\'var(--bg4)\'"><div style="padding:.4rem .6rem;display:flex;align-items:center;justify-content:space-between;"><span style="font-family:\'Rajdhani\',sans-serif;font-size:.66rem;color:var(--gold);">'+g.c.toUpperCase()+'<\/span><button class="adel" onclick="delG('+i+')">Del<\/button><\/div><\/div>';}).join('');
+  el.innerHTML=gallery.map(function(g,i){
+    return '<div style="background:var(--bg3);border:1px solid rgba(255,215,0,.1);overflow:hidden;position:relative;">'
+      +'<img src="'+g.u+'" style="width:100%;height:90px;object-fit:cover;display:block;" loading="lazy" onerror="this.style.background=\'var(--bg4)\'">'
+      +'<div style="padding:.4rem .6rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px;">'
+      +'<span style="font-family:\'Rajdhani\',sans-serif;font-size:.66rem;color:var(--gold);">'+g.c.toUpperCase()+'<\/span>'
+      +'<div style="display:flex;gap:4px;">'
+      +'<button class="adel" style="background:#1a5276;border-color:#1a5276;" onclick="replaceGalImg('+i+')">Replace<\/button>'
+      +'<button class="adel" onclick="delG('+i+')">Delete<\/button>'
+      +'<\/div><\/div><\/div>';
+  }).join('');
+}
+function replaceGalImg(i){
+  var newUrl=prompt('Enter new image URL to replace:',gallery[i].u);
+  if(!newUrl||!newUrl.trim())return;
+  gallery[i].u=newUrl.trim();
+  localStorage.setItem('js_gal',JSON.stringify(gallery));
+  renderAdmG();
+  // live update on gallery page if open
+  if(document.getElementById('page-gallery').classList.contains('active')){
+    renderGal(document.querySelector('.fbtn.active')?document.querySelector('.fbtn.active').getAttribute('onclick').match(/'([^']+)'/)[1]:'all');
+  }
+  alert('Image replaced! ✅');
 }
 function addGalImg(){
   var u=document.getElementById('aGU').value.trim(),cat=document.getElementById('aGC').value;
   if(!u){alert('Enter image URL!');return;}
-  gallery.push({u:u,c:cat});localStorage.setItem('js_gal',JSON.stringify(gallery));
-  document.getElementById('aGU').value='';renderAdmG();alert('Image added!');
+  gallery.push({u:u,c:cat});
+  localStorage.setItem('js_gal',JSON.stringify(gallery));
+  document.getElementById('aGU').value='';
+  renderAdmG();
+  // Also live update gallery page
+  if(document.getElementById('page-gallery').classList.contains('active')){renderGal('all');}
+  alert('Image added! ✅');
 }
-function delG(i){if(!confirm('Delete image?'))return;gallery.splice(i,1);localStorage.setItem('js_gal',JSON.stringify(gallery));renderAdmG();}
+function delG(i){
+  if(!confirm('Delete this image?'))return;
+  gallery.splice(i,1);
+  localStorage.setItem('js_gal',JSON.stringify(gallery));
+  renderAdmG();
+  if(document.getElementById('page-gallery').classList.contains('active')){
+    renderGal(document.querySelector('.fbtn.active')?document.querySelector('.fbtn.active').getAttribute('onclick').match(/'([^']+)'/)[1]:'all');
+  }
+}
 function renderAdmH(){
   var el=document.getElementById('heroAdm');if(!el)return;
-  el.innerHTML=heroSlides.map(function(s,i){return '<div style="display:flex;align-items:center;gap:.8rem;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.05);"><img src="'+s+'" style="width:65px;height:40px;object-fit:cover;border:1px solid rgba(255,215,0,.2);flex-shrink:0;" onerror="this.style.background=\'var(--bg3)\'"><span style="flex:1;font-size:.7rem;color:var(--textDim);font-family:\'Rajdhani\',sans-serif;word-break:break-all;overflow:hidden;">'+s.split('/').pop()+'<\/span><button class="adel" onclick="delH('+i+')">Del<\/button><\/div>';}).join('');
+  el.innerHTML=heroSlides.map(function(s,i){
+    return '<div style="display:flex;align-items:center;gap:.8rem;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.05);">'
+      +'<img src="'+s+'" style="width:65px;height:40px;object-fit:cover;border:1px solid rgba(255,215,0,.2);flex-shrink:0;" loading="lazy" onerror="this.style.background=\'var(--bg3)\'">'
+      +'<span style="flex:1;font-size:.7rem;color:var(--textDim);font-family:\'Rajdhani\',sans-serif;word-break:break-all;overflow:hidden;">'+s.split('/').pop()+'<\/span>'
+      +'<button class="adel" style="background:#1a5276;border-color:#1a5276;margin-right:4px;" onclick="replaceHeroSlide('+i+')">Replace<\/button>'
+      +'<button class="adel" onclick="delH('+i+')">Delete<\/button>'
+      +'<\/div>';
+  }).join('');
+}
+function replaceHeroSlide(i){
+  var newUrl=prompt("Enter new slide image URL:",heroSlides[i]);
+  if(!newUrl||!newUrl.trim())return;
+  heroSlides[i]=newUrl.trim();
+  localStorage.setItem('js_hero',JSON.stringify(heroSlides));
+  // Update live slide
+  var slides=document.querySelectorAll('.hslide');
+  if(slides[i])slides[i].style.backgroundImage="url('"+heroSlides[i]+"')";
+  renderAdmH();
+  alert('Hero slide replaced! ✅');
 }
 function addHeroSlide(){
   var u=document.getElementById('aHU').value.trim();if(!u){alert('Enter image URL!');return;}
@@ -2386,7 +2521,8 @@ document.addEventListener('click',function(e){
 // ═══════════════════════════════════════
 buildDots();
 startHero();
-renderRevs();
+renderRevs(1);
+
 </script>
 </body>
 </html>
